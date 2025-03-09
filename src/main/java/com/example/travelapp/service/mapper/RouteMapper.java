@@ -1,14 +1,16 @@
 package com.example.travelapp.service.mapper;
 
+
 import com.example.travelapp.model.Place;
 import com.example.travelapp.model.Route;
 import com.example.travelapp.model.User;
 import com.example.travelapp.model.dto.request.RouteRequestDto;
 import com.example.travelapp.model.dto.response.RouteResponseDto;
-import org.springframework.stereotype.Component;
-
 import java.util.List;
 import java.util.stream.Collectors;
+import org.springframework.stereotype.Component;
+
+
 
 @Component
 public class RouteMapper {

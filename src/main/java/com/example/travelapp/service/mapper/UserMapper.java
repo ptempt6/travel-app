@@ -3,8 +3,9 @@ package com.example.travelapp.service.mapper;
 import com.example.travelapp.model.User;
 import com.example.travelapp.model.dto.request.UserRequestDto;
 import com.example.travelapp.model.dto.response.UserResponseDto;
-import org.springframework.stereotype.Component;
 import java.util.stream.Collectors;
+import org.springframework.stereotype.Component;
+
 
 @Component
 public class UserMapper {

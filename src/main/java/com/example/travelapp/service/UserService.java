@@ -1,16 +1,18 @@
 package com.example.travelapp.service;
 
 
+import com.example.travelapp.exception.EntityNotFoundException;
 import com.example.travelapp.model.User;
 import com.example.travelapp.model.dto.request.UserRequestDto;
 import com.example.travelapp.model.dto.response.UserResponseDto;
 import com.example.travelapp.repository.UserRepository;
 import com.example.travelapp.service.mapper.UserMapper;
+import java.util.List;
+import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
-import java.util.stream.Collectors;
+
 
 @Service
 public class UserService {
@@ -30,7 +32,8 @@ public class UserService {
     }
 
     public UserResponseDto getUserById(Long id) {
-        User user = userRepository.findById(id).orElseThrow(() -> new RuntimeException("User not found"));
+        User user = userRepository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("User not found"));
         return userMapper.toResponseDto(user);
     }
 
@@ -42,7 +45,8 @@ public class UserService {
 
     @Transactional
     public UserResponseDto updateUser(Long id, UserRequestDto dto) {
-        User user = userRepository.findById(id).orElseThrow(() -> new RuntimeException("User not found"));
+        User user = userRepository.findById(id).orElseThrow(()
+                -> new EntityNotFoundException("User not found"));
         user.setName(dto.getName());
         user.setEmail(dto.getEmail());
         return userMapper.toResponseDto(userRepository.save(user));

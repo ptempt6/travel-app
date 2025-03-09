@@ -1,16 +1,18 @@
 package com.example.travelapp.model;
 
-
-
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import jakarta.persistence.*;
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.Table;
+import java.util.ArrayList;
+import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Getter
 @Setter
@@ -25,12 +27,10 @@ public class Place {
     private String name;
     private String address;
     private String description;
-
     //@OneToMany(mappedBy = "place")
     //private List<Review> reviews;
-
-    @ManyToMany(mappedBy = "places")
-    //@JsonBackReference
+    @ManyToMany(mappedBy = "places", cascade = {CascadeType.DETACH, CascadeType.MERGE,
+        CascadeType.PERSIST, CascadeType.REFRESH})
     private List<Route> routes = new ArrayList<>();
 
 
