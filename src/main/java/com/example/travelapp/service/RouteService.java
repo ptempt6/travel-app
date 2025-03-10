@@ -38,7 +38,7 @@ public class RouteService {
     public List<RouteResponseDto> getAllRoutes() {
         return routeRepository.findAll().stream()
                 .map(routeMapper::toResponseDto)
-                .collect(Collectors.toList());
+                .toList();
     }
 
     public RouteResponseDto getRouteById(Long id) {

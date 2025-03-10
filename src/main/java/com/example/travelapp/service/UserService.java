@@ -29,7 +29,7 @@ public class UserService {
     public List<UserResponseDto> getAllUsers() {
         return userRepository.findAll().stream()
                 .map(userMapper::toResponseDto)
-                .collect(Collectors.toList());
+                .toList();
     }
 
     public UserResponseDto getUserById(Long id) {

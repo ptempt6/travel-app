@@ -33,7 +33,7 @@ public class PlaceService {
     public List<PlaceResponseDto> getAllPlaces() {
         return placeRepository.findAll().stream()
                 .map(placeMapper::toResponseDto)
-                .collect(Collectors.toList());
+                .toList();
     }
 
     public PlaceResponseDto getPlaceById(Long id) {

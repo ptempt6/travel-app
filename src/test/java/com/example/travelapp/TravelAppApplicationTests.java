@@ -8,6 +8,7 @@ class TravelAppApplicationTests {
 
     @Test
     void contextLoads() {
+        // actually tests context loading
     }
 
 }
