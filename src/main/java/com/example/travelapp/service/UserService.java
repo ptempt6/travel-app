@@ -9,7 +9,6 @@ import com.example.travelapp.model.dto.response.UserResponseDto;
 import com.example.travelapp.repository.UserRepository;
 import com.example.travelapp.service.mapper.UserMapper;
 import java.util.List;
-import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -34,7 +33,7 @@ public class UserService {
 
     public UserResponseDto getUserById(Long id) {
         User user = userRepository.findById(id)
-                .orElseThrow(() -> new EntityNotFoundException("User not found"));
+                .orElseThrow(() -> new EntityNotFoundException(ErrorMessages.USER_NOT_FOUND));
         return userMapper.toResponseDto(user);
     }
 
@@ -47,7 +46,7 @@ public class UserService {
     @Transactional
     public UserResponseDto updateUser(Long id, UserRequestDto dto) {
         User user = userRepository.findById(id).orElseThrow(()
-                -> new EntityNotFoundException("User not found"));
+                -> new EntityNotFoundException(ErrorMessages.USER_NOT_FOUND));
         user.setName(dto.getName());
         user.setEmail(dto.getEmail());
         return userMapper.toResponseDto(userRepository.save(user));

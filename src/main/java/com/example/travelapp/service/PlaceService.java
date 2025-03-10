@@ -6,11 +6,12 @@ import com.example.travelapp.model.Place;
 import com.example.travelapp.model.Route;
 import com.example.travelapp.model.dto.request.PlaceRequestDto;
 import com.example.travelapp.model.dto.response.PlaceResponseDto;
+import com.example.travelapp.model.dto.response.RouteResponseDto;
 import com.example.travelapp.repository.PlaceRepository;
 import com.example.travelapp.repository.RouteRepository;
 import com.example.travelapp.service.mapper.PlaceMapper;
+import com.example.travelapp.service.mapper.RouteMapper;
 import java.util.List;
-import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -22,12 +23,15 @@ public class PlaceService {
     private final PlaceRepository placeRepository;
     private final PlaceMapper placeMapper;
     private final RouteRepository routeRepository;
+    private final RouteMapper routeMapper;
 
     public PlaceService(PlaceRepository placeRepository,
-                        PlaceMapper placeMapper, RouteRepository routeRepository) {
+                        PlaceMapper placeMapper, RouteRepository routeRepository,
+                        RouteMapper routeMapper) {
         this.placeRepository = placeRepository;
         this.placeMapper = placeMapper;
         this.routeRepository = routeRepository;
+        this.routeMapper = routeMapper;
     }
 
     public List<PlaceResponseDto> getAllPlaces() {
@@ -40,6 +44,12 @@ public class PlaceService {
         Place place = placeRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException(ErrorMessages.PLACE_NOT_FOUND));
         return placeMapper.toResponseDto(place);
+    }
+
+    public List<RouteResponseDto> getRoutesByPlace(Long id) {
+        Place place = placeRepository.findById(id).orElseThrow(()
+                -> new EntityNotFoundException(ErrorMessages.PLACE_NOT_FOUND));
+        return place.getRoutes().stream().map(routeMapper::toResponseDto).toList();
     }
 
     @Transactional

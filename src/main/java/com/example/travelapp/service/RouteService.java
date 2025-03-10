@@ -13,7 +13,6 @@ import com.example.travelapp.repository.RouteRepository;
 import com.example.travelapp.repository.UserRepository;
 import com.example.travelapp.service.mapper.RouteMapper;
 import java.util.List;
-import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -50,7 +49,7 @@ public class RouteService {
     @Transactional
     public RouteResponseDto createRoute(RouteRequestDto dto) {
         User author = userRepository.findById(dto.getAuthorId()).orElseThrow(()
-                -> new EntityNotFoundException("User not found"));
+                -> new EntityNotFoundException(ErrorMessages.USER_NOT_FOUND));
         List<Place> places = placeRepository.findAllById(dto.getPlaceIds());
         Route route = routeMapper.toEntity(dto, author, places);
         return routeMapper.toResponseDto(routeRepository.save(route));
@@ -66,7 +65,7 @@ public class RouteService {
 
         if (dto.getAuthorId() != null) {
             User author = userRepository.findById(dto.getAuthorId())
-                    .orElseThrow(() -> new EntityNotFoundException("User not found"));
+                    .orElseThrow(() -> new EntityNotFoundException(ErrorMessages.USER_NOT_FOUND));
             route.setAuthor(author);
         }
 

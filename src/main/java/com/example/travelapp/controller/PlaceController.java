@@ -3,6 +3,7 @@ package com.example.travelapp.controller;
 
 import com.example.travelapp.model.dto.request.PlaceRequestDto;
 import com.example.travelapp.model.dto.response.PlaceResponseDto;
+import com.example.travelapp.model.dto.response.RouteResponseDto;
 import com.example.travelapp.service.PlaceService;
 import java.util.List;
 import org.springframework.http.ResponseEntity;
@@ -34,6 +35,11 @@ public class PlaceController {
     @GetMapping("/{id}")
     public ResponseEntity<PlaceResponseDto> getPlaceById(@PathVariable Long id) {
         return ResponseEntity.ok(placeService.getPlaceById(id));
+    }
+
+    @GetMapping("/{id}/routes")
+    public ResponseEntity<List<RouteResponseDto>> getRoutesByPlace(@PathVariable Long id) {
+        return ResponseEntity.ok(placeService.getRoutesByPlace(id));
     }
 
     @PostMapping
