@@ -29,9 +29,6 @@ public class User {
     private String name;
     private String email;
 
-    //@OneToMany(mappedBy = "user")
-    //private List<Review> reviews;
-
     @OneToMany(mappedBy = "author", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Route> routes = new ArrayList<>();
 }

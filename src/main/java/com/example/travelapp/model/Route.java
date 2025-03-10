@@ -42,9 +42,6 @@ public class Route {
             joinColumns = @JoinColumn(name = "route_id"),
             inverseJoinColumns = @JoinColumn(name = "place_id")
     )
-    private /*Linked*/List<Place> places = new ArrayList<>();
-
-    //@OneToMany(mappedBy = "route")
-    //private List<Review> review;
+    private List<Place> places = new ArrayList<>();
 
 }

@@ -1,6 +1,8 @@
 package com.example.travelapp.service;
 
+
 import com.example.travelapp.exception.EntityNotFoundException;
+import com.example.travelapp.exception.ErrorMessages;
 import com.example.travelapp.model.Place;
 import com.example.travelapp.model.Route;
 import com.example.travelapp.model.User;
@@ -41,7 +43,7 @@ public class RouteService {
 
     public RouteResponseDto getRouteById(Long id) {
         Route route = routeRepository.findById(id).orElseThrow(() ->
-                new EntityNotFoundException("Route not found"));
+                new EntityNotFoundException(ErrorMessages.ROUTE_NOT_FOUND));
         return routeMapper.toResponseDto(route);
     }
 
@@ -57,7 +59,7 @@ public class RouteService {
     @Transactional
     public RouteResponseDto updateRoute(Long id, RouteRequestDto dto) {
         Route route = routeRepository.findById(id)
-                .orElseThrow(() -> new EntityNotFoundException("Route not found"));
+                .orElseThrow(() -> new EntityNotFoundException(ErrorMessages.ROUTE_NOT_FOUND));
 
         route.setName(dto.getName());
         route.setDescription(dto.getDescription());
@@ -75,9 +77,9 @@ public class RouteService {
     @Transactional
     public void addPlaceToRoute(Long routeId, Long placeId) {
         Route route = routeRepository.findById(routeId).orElseThrow(() ->
-                new EntityNotFoundException("Route not found"));
+                new EntityNotFoundException(ErrorMessages.ROUTE_NOT_FOUND));
         Place place = placeRepository.findById(placeId).orElseThrow(() ->
-                new EntityNotFoundException("Place not found"));
+                new EntityNotFoundException(ErrorMessages.PLACE_NOT_FOUND));
         if (route.getPlaces().contains(place)) {
             throw new IllegalArgumentException("Place already exists in this route");
         }
@@ -94,9 +96,9 @@ public class RouteService {
     @Transactional
     public void removePlaceFromRoute(Long routeId, Long placeId) {
         Route route = routeRepository.findById(routeId)
-                .orElseThrow(() -> new EntityNotFoundException("Route not found"));
+                .orElseThrow(() -> new EntityNotFoundException(ErrorMessages.ROUTE_NOT_FOUND));
         Place place = placeRepository.findById(placeId)
-                .orElseThrow(() -> new EntityNotFoundException("Place not found"));
+                .orElseThrow(() -> new EntityNotFoundException(ErrorMessages.PLACE_NOT_FOUND));
 
         if (!route.getPlaces().contains(place)) {
             throw new IllegalArgumentException("Place is not in this route");

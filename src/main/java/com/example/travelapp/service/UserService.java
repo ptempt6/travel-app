@@ -2,6 +2,7 @@ package com.example.travelapp.service;
 
 
 import com.example.travelapp.exception.EntityNotFoundException;
+import com.example.travelapp.exception.ErrorMessages;
 import com.example.travelapp.model.User;
 import com.example.travelapp.model.dto.request.UserRequestDto;
 import com.example.travelapp.model.dto.response.UserResponseDto;

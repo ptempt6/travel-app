@@ -27,8 +27,6 @@ public class Place {
     private String name;
     private String address;
     private String description;
-    //@OneToMany(mappedBy = "place")
-    //private List<Review> reviews;
     @ManyToMany(mappedBy = "places", cascade = {CascadeType.DETACH, CascadeType.MERGE,
         CascadeType.PERSIST, CascadeType.REFRESH})
     private List<Route> routes = new ArrayList<>();

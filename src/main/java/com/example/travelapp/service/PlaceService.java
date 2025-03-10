@@ -1,6 +1,7 @@
 package com.example.travelapp.service;
 
 import com.example.travelapp.exception.EntityNotFoundException;
+import com.example.travelapp.exception.ErrorMessages;
 import com.example.travelapp.model.Place;
 import com.example.travelapp.model.Route;
 import com.example.travelapp.model.dto.request.PlaceRequestDto;
@@ -37,7 +38,7 @@ public class PlaceService {
 
     public PlaceResponseDto getPlaceById(Long id) {
         Place place = placeRepository.findById(id)
-                .orElseThrow(() -> new EntityNotFoundException("Place not found"));
+                .orElseThrow(() -> new EntityNotFoundException(ErrorMessages.PLACE_NOT_FOUND));
         return placeMapper.toResponseDto(place);
     }
 
@@ -50,7 +51,7 @@ public class PlaceService {
     @Transactional
     public PlaceResponseDto updatePlace(Long id, PlaceRequestDto dto) {
         Place place = placeRepository.findById(id)
-                .orElseThrow(() -> new EntityNotFoundException("Place not found"));
+                .orElseThrow(() -> new EntityNotFoundException(ErrorMessages.PLACE_NOT_FOUND));
         place.setName(dto.getName());
         place.setAddress(dto.getAddress());
         place.setDescription(dto.getDescription());
@@ -61,7 +62,7 @@ public class PlaceService {
     public void deletePlace(Long id) {
 
         Place place = placeRepository.findById(id)
-                .orElseThrow(() -> new EntityNotFoundException("Place not found"));
+                .orElseThrow(() -> new EntityNotFoundException(ErrorMessages.PLACE_NOT_FOUND));
 
         for (Route route : place.getRoutes()) {
             route.getPlaces().remove(place);
