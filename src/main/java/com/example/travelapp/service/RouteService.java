@@ -40,6 +40,13 @@ public class RouteService {
                 .toList();
     }
 
+    public List<RouteResponseDto> getAllRoutesWithMinimumPlaces(int minPlaces) {
+        return routeRepository.findRoutesWithMinimumPlaces(minPlaces)
+                .stream()
+                .map(routeMapper::toResponseDto)
+                .toList();
+    }
+
     public RouteResponseDto getRouteById(Long id) {
         Route route = routeRepository.findById(id).orElseThrow(() ->
                 new EntityNotFoundException(ErrorMessages.ROUTE_NOT_FOUND));

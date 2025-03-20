@@ -9,6 +9,7 @@ import com.example.travelapp.model.dto.response.PlaceResponseDto;
 import com.example.travelapp.model.dto.response.RouteResponseDto;
 import com.example.travelapp.repository.PlaceRepository;
 import com.example.travelapp.repository.RouteRepository;
+import com.example.travelapp.repository.UserRepository;
 import com.example.travelapp.service.mapper.PlaceMapper;
 import com.example.travelapp.service.mapper.RouteMapper;
 import java.util.List;
@@ -24,20 +25,31 @@ public class PlaceService {
     private final PlaceMapper placeMapper;
     private final RouteRepository routeRepository;
     private final RouteMapper routeMapper;
+    private final UserRepository userRepository;
 
     public PlaceService(PlaceRepository placeRepository,
                         PlaceMapper placeMapper, RouteRepository routeRepository,
-                        RouteMapper routeMapper) {
+                        RouteMapper routeMapper, UserRepository userRepository) {
         this.placeRepository = placeRepository;
         this.placeMapper = placeMapper;
         this.routeRepository = routeRepository;
         this.routeMapper = routeMapper;
+        this.userRepository = userRepository;
     }
 
     public List<PlaceResponseDto> getAllPlaces() {
         return placeRepository.findAll().stream()
                 .map(placeMapper::toResponseDto)
                 .toList();
+    }
+
+    public List<PlaceResponseDto> findPlacesNotVisitedByUser(Long userId) {
+        if (!userRepository.existsById(userId)) {
+            throw new EntityNotFoundException(ErrorMessages.USER_NOT_FOUND);
+        }
+        return placeRepository.findPlacesNotVisitedByUser(userId)
+                .stream()
+                .map(placeMapper::toResponseDto).toList();
     }
 
     public PlaceResponseDto getPlaceById(Long id) {

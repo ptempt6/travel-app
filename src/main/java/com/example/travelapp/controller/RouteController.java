@@ -6,15 +6,7 @@ import com.example.travelapp.model.dto.response.RouteResponseDto;
 import com.example.travelapp.service.RouteService;
 import java.util.List;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
+import org.springframework.web.bind.annotation.*;
 
 
 @RestController
@@ -30,6 +22,12 @@ public class RouteController {
     @GetMapping
     public ResponseEntity<List<RouteResponseDto>> getAllRoutes() {
         return ResponseEntity.ok(routeService.getAllRoutes());
+    }
+
+    @GetMapping("/more-than")
+    public ResponseEntity<List<RouteResponseDto>> getMoreThanRoutes(
+            @RequestParam int minPlaces) {
+        return ResponseEntity.ok(routeService.getAllRoutesWithMinimumPlaces(minPlaces));
     }
 
     @GetMapping("/{id}")
