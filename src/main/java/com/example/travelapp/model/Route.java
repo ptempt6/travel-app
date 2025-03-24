@@ -1,6 +1,7 @@
 package com.example.travelapp.model;
 
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -25,6 +26,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @Entity
 @Table(name = "Routes")
+@Schema(hidden = true)
 public class Route {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

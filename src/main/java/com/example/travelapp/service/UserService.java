@@ -2,12 +2,11 @@ package com.example.travelapp.service;
 
 
 import com.example.travelapp.cache.UserCache;
-import com.example.travelapp.exception.EntityNotFoundException;
 import com.example.travelapp.exception.ErrorMessages;
+import com.example.travelapp.exception.NotFoundException;
 import com.example.travelapp.model.User;
 import com.example.travelapp.model.dto.request.UserRequestDto;
 import com.example.travelapp.model.dto.response.UserResponseDto;
-import com.example.travelapp.repository.PlaceRepository;
 import com.example.travelapp.repository.UserRepository;
 import com.example.travelapp.service.mapper.UserMapper;
 import java.util.List;
@@ -43,7 +42,7 @@ public class UserService {
         }
 
         User user = userRepository.findById(id)
-                .orElseThrow(() -> new EntityNotFoundException(ErrorMessages.USER_NOT_FOUND));
+                .orElseThrow(() -> new NotFoundException(ErrorMessages.USER_NOT_FOUND));
 
         userCache.put(id, user);
         return userMapper.toResponseDto(user);
@@ -60,7 +59,7 @@ public class UserService {
     @Transactional
     public UserResponseDto updateUser(Long id, UserRequestDto dto) {
         User user = userRepository.findById(id).orElseThrow(()
-                -> new EntityNotFoundException(ErrorMessages.USER_NOT_FOUND));
+                -> new NotFoundException(ErrorMessages.USER_NOT_FOUND));
         user.setName(dto.getName());
         user.setEmail(dto.getEmail());
 

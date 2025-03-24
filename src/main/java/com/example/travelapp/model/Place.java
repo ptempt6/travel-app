@@ -1,5 +1,6 @@
 package com.example.travelapp.model;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -20,6 +21,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Entity
 @Table(name = "Places")
+@Schema(hidden = true)
 public class Place {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
