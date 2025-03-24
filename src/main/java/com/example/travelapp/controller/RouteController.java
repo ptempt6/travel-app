@@ -1,6 +1,5 @@
 package com.example.travelapp.controller;
 
-
 import com.example.travelapp.model.dto.request.RouteRequestDto;
 import com.example.travelapp.model.dto.response.RouteResponseDto;
 import com.example.travelapp.service.RouteService;
@@ -202,6 +201,30 @@ public class RouteController {
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteRoute(@PathVariable Long id) {
         routeService.deleteRoute(id);
+        return ResponseEntity.noContent().build();
+    }
+
+    @Operation(summary = "Add place to route",
+            description = "This endpoint allows adding a place to the specified route.")
+    @PostMapping("{routeId}/add/{placeId}")
+    public ResponseEntity<Void> addPlaceToRoute(
+            @Parameter(description = "Route ID", required = true)
+            @PathVariable Long routeId,
+            @Parameter(description = "Place ID", required = true)
+            @PathVariable Long placeId) {
+        routeService.addPlaceToRoute(routeId, placeId);
+        return ResponseEntity.noContent().build();
+    }
+
+    @Operation(summary = "Remove place from route",
+            description = "This endpoint allows removing a place from the specified route.")
+    @DeleteMapping("/{routeId}/remove/{placeId}")
+    public ResponseEntity<Void> removePlaceFromRoute(
+            @Parameter(description = "Route ID", required = true)
+            @PathVariable Long routeId,
+            @Parameter(description = "Place ID", required = true)
+            @PathVariable Long placeId) {
+        routeService.removePlaceFromRoute(routeId, placeId);
         return ResponseEntity.noContent().build();
     }
 }

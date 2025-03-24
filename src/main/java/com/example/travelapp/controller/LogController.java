@@ -1,6 +1,5 @@
 package com.example.travelapp.controller;
 
-import com.example.travelapp.model.dto.response.ErrorResponseDto;
 import com.example.travelapp.service.LogService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
