@@ -46,19 +46,11 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(MethodArgumentTypeMismatchException.class)
     public ResponseEntity<ErrorResponseDto> handleArgumentTypeMismatch(
             MethodArgumentTypeMismatchException ex, HttpServletRequest request) {
-        String errorMessage = String.format("Invalid type for argument \"%s\"", ex.getName());
+        String errorMessage = String.format("Invalid type for argument %s", ex.getName());
         ErrorResponseDto errorResponse = buildErrorResponse(HttpStatus.BAD_REQUEST, ex, request);
         errorResponse.setMessage(errorMessage);
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorResponse);
     }
 
-    @ExceptionHandler(Exception.class)
-    public ResponseEntity<ErrorResponseDto> handleGenericException(
-            Exception ex, HttpServletRequest request) {
-        String errorMessage = "An error occurred";
-        ErrorResponseDto errorResponse =
-                buildErrorResponse(HttpStatus.INTERNAL_SERVER_ERROR, ex, request);
-        errorResponse.setMessage(errorMessage);
-        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(errorResponse);
-    }
+
 }

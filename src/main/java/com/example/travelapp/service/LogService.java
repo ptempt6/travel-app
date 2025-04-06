@@ -19,7 +19,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class LogService {
 
-    private static final String LOG_FILE_PATH = "logs/app.log";
+    public static final String LOG_FILE_PATH = "logs/app.log";
 
     public Resource downloadLogs(String date) {
         LocalDate logDate = parseDate(date);
@@ -35,7 +35,7 @@ public class LogService {
         return createResourceFromTempFile(tempFile, date);
     }
 
-    private LocalDate parseDate(String date) {
+    public LocalDate parseDate(String date) {
         try {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
             return LocalDate.parse(date, formatter);
@@ -44,13 +44,13 @@ public class LogService {
         }
     }
 
-    private void validateLogFileExists(Path path) {
+    public void validateLogFileExists(Path path) {
         if (!Files.exists(path)) {
             throw new NotFoundException("File doesn't exist: " + LOG_FILE_PATH);
         }
     }
 
-    private Path createTempFile(LocalDate logDate) {
+    public Path createTempFile(LocalDate logDate) {
         try {
             return Files.createTempFile("logs-" + logDate, ".log");
         } catch (IOException e) {
@@ -58,7 +58,7 @@ public class LogService {
         }
     }
 
-    private void filterAndWriteLogsToTempFile(Path logFilePath, String formattedDate,
+    public void filterAndWriteLogsToTempFile(Path logFilePath, String formattedDate,
                                               Path tempFile) {
         try (BufferedReader reader = Files.newBufferedReader(logFilePath)) {
             Files.write(tempFile, reader.lines()
@@ -69,7 +69,7 @@ public class LogService {
         }
     }
 
-    private Resource createResourceFromTempFile(Path tempFile, String date) {
+    public Resource createResourceFromTempFile(Path tempFile, String date) {
         try {
             if (Files.size(tempFile) == 0) {
                 throw new NotFoundException("There are no logs for specified date: " + date);

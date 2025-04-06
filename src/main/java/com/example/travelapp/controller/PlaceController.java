@@ -164,6 +164,16 @@ public class PlaceController {
         return ResponseEntity.ok(placeService.createPlace(dto));
     }
 
+    @PostMapping("/bulk")
+    public ResponseEntity<List<PlaceResponseDto>> createPlaces(
+            @RequestBody @Valid List<PlaceRequestDto> dtos) {
+        return ResponseEntity.ok(placeService.createPlaces(dtos));
+        //return ResponseEntity.ok(
+        //        dtos.stream().map(placeService::createPlace).toList()
+        //);
+    }
+
+
     @Operation(
             summary = "Update an existing place",
             description = "Update the details of an existing place using the provided ID and data.",

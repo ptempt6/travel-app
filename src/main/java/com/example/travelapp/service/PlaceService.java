@@ -12,6 +12,7 @@ import com.example.travelapp.repository.RouteRepository;
 import com.example.travelapp.repository.UserRepository;
 import com.example.travelapp.service.mapper.PlaceMapper;
 import com.example.travelapp.service.mapper.RouteMapper;
+import java.util.ArrayList;
 import java.util.List;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -68,6 +69,17 @@ public class PlaceService {
     public PlaceResponseDto createPlace(PlaceRequestDto dto) {
         Place place = placeMapper.toEntity(dto);
         return placeMapper.toResponseDto(placeRepository.save(place));
+    }
+
+    @Transactional
+    public List<PlaceResponseDto> createPlaces(List<PlaceRequestDto> dtos) {
+        List<PlaceResponseDto> responseDtos = new ArrayList<>();
+
+        dtos.forEach(dto -> {
+            responseDtos.add(createPlace(dto));
+        });
+
+        return responseDtos;
     }
 
     @Transactional

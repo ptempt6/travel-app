@@ -3,12 +3,16 @@ package com.example.travelapp.model.dto.response;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.util.ArrayList;
 import java.util.List;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Schema(description = "User response DTO")
 public class UserResponseDto {
     @Schema(description = "User ID", example = "1")
