@@ -11,17 +11,14 @@ import org.mockito.MockedStatic;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
-
+import java.util.stream.Stream;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
@@ -45,7 +42,7 @@ public class LogServiceUnitTest {
     }
 
     @Test
-    void validateLogFileExists_WhenFileExists_ShouldNotThrowException() throws IOException {
+    void validateLogFileExists_WhenFileExists_ShouldNotThrowException() {
         try (MockedStatic<Files> filesMock = mockStatic(Files.class)) {
             Path path = mock(Path.class);
             filesMock.when(() -> Files.exists(path)).thenReturn(true);
@@ -56,7 +53,7 @@ public class LogServiceUnitTest {
     }
 
     @Test
-    void validateLogFileExists_WhenFileNotExists_ShouldThrowNotFoundException() throws IOException {
+    void validateLogFileExists_WhenFileNotExists_ShouldThrowNotFoundException() {
         try (MockedStatic<Files> filesMock = mockStatic(Files.class)) {
             Path path = mock(Path.class);
             filesMock.when(() -> Files.exists(path)).thenReturn(false);
@@ -66,7 +63,7 @@ public class LogServiceUnitTest {
     }
 
     @Test
-    void createTempFile_ShouldReturnPath() throws IOException {
+    void createTempFile_ShouldReturnPath() {
         try (MockedStatic<Files> filesMock = mockStatic(Files.class)) {
             Path expectedPath = mock(Path.class);
             filesMock.when(() -> Files.createTempFile(anyString(), anyString()))
@@ -78,7 +75,7 @@ public class LogServiceUnitTest {
     }
 
     @Test
-    void createTempFile_WhenIOException_ShouldThrowInternalServerError() throws IOException {
+    void createTempFile_WhenIOException_ShouldThrowInternalServerError() {
         try (MockedStatic<Files> filesMock = mockStatic(Files.class)) {
             filesMock.when(() -> Files.createTempFile(anyString(), anyString()))
                     .thenThrow(new IOException("Test error"));
@@ -89,18 +86,18 @@ public class LogServiceUnitTest {
     }
 
     @Test
-    void filterAndWriteLogsToTempFile_ShouldFilterByDate() throws IOException {
+    void filterAndWriteLogsToTempFile_ShouldFilterByDate() {
         try (MockedStatic<Files> filesMock = mockStatic(Files.class)) {
             Path logFilePath = mock(Path.class);
             Path tempFile = mock(Path.class);
             BufferedReader reader = mock(BufferedReader.class);
 
             filesMock.when(() -> Files.newBufferedReader(logFilePath)).thenReturn(reader);
-            when(reader.lines()).thenReturn(List.of(
+            when(reader.lines()).thenReturn(Stream.of(
                     "15-01-2023: Test log 1",
                     "16-01-2023: Test log 2",
                     "15-01-2023: Test log 3"
-            ).stream());
+            ));
 
             logService.filterAndWriteLogsToTempFile(logFilePath, "15-01-2023", tempFile);
 
@@ -144,7 +141,7 @@ public class LogServiceUnitTest {
     }
 
     @Test
-    void createResourceFromTempFile_WhenFileEmpty_ShouldThrowNotFoundException() throws IOException {
+    void createResourceFromTempFile_WhenFileEmpty_ShouldThrowNotFoundException() {
         try (MockedStatic<Files> filesMock = mockStatic(Files.class)) {
             // Arrange
             Path tempFile = mock(Path.class);

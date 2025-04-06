@@ -75,9 +75,7 @@ public class PlaceService {
     public List<PlaceResponseDto> createPlaces(List<PlaceRequestDto> dtos) {
         List<PlaceResponseDto> responseDtos = new ArrayList<>();
 
-        dtos.forEach(dto -> {
-            responseDtos.add(createPlace(dto));
-        });
+        dtos.forEach(dto -> responseDtos.add(createPlace(dto)));
 
         return responseDtos;
     }
