@@ -168,9 +168,6 @@ public class PlaceController {
     public ResponseEntity<List<PlaceResponseDto>> createPlaces(
             @RequestBody @Valid List<PlaceRequestDto> dtos) {
         return ResponseEntity.ok(placeService.createPlaces(dtos));
-        //return ResponseEntity.ok(
-        //        dtos.stream().map(placeService::createPlace).toList()
-        //);
     }
 
 

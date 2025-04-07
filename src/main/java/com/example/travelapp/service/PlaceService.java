@@ -73,11 +73,9 @@ public class PlaceService {
 
     @Transactional
     public List<PlaceResponseDto> createPlaces(List<PlaceRequestDto> dtos) {
-        List<PlaceResponseDto> responseDtos = new ArrayList<>();
-
-        dtos.forEach(dto -> responseDtos.add(createPlace(dto)));
-
-        return responseDtos;
+        return dtos.stream()
+                .map(this::createPlace)
+                .toList();
     }
 
     @Transactional
