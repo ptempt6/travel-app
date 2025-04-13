@@ -1,85 +1,71 @@
 package com.example.travelapp.service;
 
-import com.example.travelapp.exception.BadRequestException;
 import com.example.travelapp.exception.InternalServerErrorException;
 import com.example.travelapp.exception.NotFoundException;
-import java.io.BufferedReader;
+import com.example.travelapp.model.LogObj;
 import java.io.IOException;
-import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.time.format.DateTimeParseException;
-import java.util.stream.Collectors;
+import java.util.concurrent.atomic.AtomicLong;
+import org.apache.coyote.BadRequestException;
+import org.springframework.cache.Cache;
+import org.springframework.cache.CacheManager;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 @Service
 public class LogService {
+    private final AsyncLogService asyncLogService;
+    private final CacheManager cacheManager;
+    private final AtomicLong idCounter = new AtomicLong(1);
 
-    public static final String LOG_FILE_PATH = "logs/app.log";
-
-    public Resource downloadLogs(String date) {
-        LocalDate logDate = parseDate(date);
-
-        Path logFilePath = Paths.get(LOG_FILE_PATH);
-        validateLogFileExists(logFilePath);
-
-        String formattedDate = logDate.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
-
-        Path tempFile = createTempFile(logDate);
-        filterAndWriteLogsToTempFile(logFilePath, formattedDate, tempFile);
-
-        return createResourceFromTempFile(tempFile, date);
+    public LogService(AsyncLogService asyncLogService, CacheManager cacheManager) {
+        this.asyncLogService = asyncLogService;
+        this.cacheManager = cacheManager;
     }
 
-    public LocalDate parseDate(String date) {
-        try {
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-            return LocalDate.parse(date, formatter);
-        } catch (DateTimeParseException e) {
-            throw new BadRequestException("Invalid date format. Required dd-MM-yyyy");
+    public Long startLogCreation(String date) {
+        Long id = idCounter.getAndIncrement();
+        LogObj task = new LogObj(id, "IN_PROGRESS");
+        Cache logsCache = cacheManager.getCache("logTasks");
+        if (logsCache != null) {
+            logsCache.put(id, task);
+        }
+        asyncLogService.createLogs(id, date, logsCache);
+        return id;
+    }
+
+    public LogObj getStatus(Long taskId) {
+        Cache logsCache = cacheManager.getCache("logTasks");
+        if (logsCache != null) {
+            return logsCache.get(taskId, LogObj.class);
+        } else {
+            return null;
         }
     }
 
-    public void validateLogFileExists(Path path) {
-        if (!Files.exists(path)) {
-            throw new NotFoundException("File doesn't exist: " + LOG_FILE_PATH);
+    public ResponseEntity<Resource> downloadCreatedLogs(Long taskId) throws IOException {
+        LogObj task = getStatus(taskId);
+        if (task == null) {
+            throw new NotFoundException("Task not found");
         }
-    }
+        if (!"COMPLETED".equals(task.getStatus())) {
+            throw new BadRequestException("Logs not ready");
+        }
 
-    public Path createTempFile(LocalDate logDate) {
-        try {
-            return Files.createTempFile("logs-" + logDate, ".log");
-        } catch (IOException e) {
-            throw new InternalServerErrorException("Error creating temp file: " + e.getMessage());
-        }
-    }
+        Path path = Paths.get(task.getFilePath());
+        Resource resource = new UrlResource(path.toUri());
 
-    public void filterAndWriteLogsToTempFile(Path logFilePath, String formattedDate,
-                                              Path tempFile) {
-        try (BufferedReader reader = Files.newBufferedReader(logFilePath)) {
-            Files.write(tempFile, reader.lines()
-                    .filter(line -> line.contains(formattedDate))
-                    .collect(Collectors.toList()));
-        } catch (IOException e) {
-            throw new InternalServerErrorException("Error processing log file: " + e.getMessage());
-        }
-    }
-
-    public Resource createResourceFromTempFile(Path tempFile, String date) {
-        try {
-            if (Files.size(tempFile) == 0) {
-                throw new NotFoundException("There are no logs for specified date: " + date);
-            }
-            Resource resource = new UrlResource(tempFile.toUri());
-            tempFile.toFile().deleteOnExit();
-            return resource;
-        } catch (IOException e) {
-            throw new InternalServerErrorException("Error creating resource from temp file: "
-                    + e.getMessage());
-        }
+        return ResponseEntity.ok()
+                .contentType(MediaType.APPLICATION_OCTET_STREAM)
+                .header(HttpHeaders.CONTENT_DISPOSITION,
+                        "attachment; filename=\"" + resource.getFilename() + "\"")
+                .body(resource);
     }
 }
