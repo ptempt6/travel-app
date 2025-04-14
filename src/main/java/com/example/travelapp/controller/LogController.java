@@ -39,11 +39,7 @@ public class LogController {
         return ResponseEntity.accepted().body(taskId);
     }
 
-    /** Function to check status of log creation task.
-     *
-     * @param taskId id of the log creation task
-     * @return status of the task and error message in case of exception
-     */
+
     @Operation(summary = "Check task status", description = "Returns current task status")
     @GetMapping("/status/{taskId}")
     public ResponseEntity<Map<String, String>> checkStatus(
@@ -58,11 +54,7 @@ public class LogController {
         return ResponseEntity.ok(response);
     }
 
-    /** Function to download created file with specified logs.
-     *
-     * @param taskId id of the task
-     * @return file with specified logs
-     */
+
     @Operation(summary = "Download created logs",
             description = "Downloads generated log file by ID")
     @GetMapping("/download/{taskId}")

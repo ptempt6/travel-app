@@ -8,15 +8,12 @@ import org.springframework.cache.caffeine.CaffeineCacheManager;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-/** Class to store cache. */
+
 @Configuration
 @EnableCaching
 public class CacheConfig {
 
-    /** Function to create manager that will hold all app cache.
-     *
-     * @return object of CacheManager
-     */
+
     @Bean
     public CacheManager cacheManager() {
         CaffeineCacheManager cacheManager = new CaffeineCacheManager();
