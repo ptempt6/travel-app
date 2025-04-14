@@ -1,6 +1,6 @@
 package com.example.travelapp.service;
 
-import com.example.travelapp.exception.InternalServerErrorException;
+
 import com.example.travelapp.exception.NotFoundException;
 import com.example.travelapp.model.LogObj;
 import java.io.IOException;
@@ -13,11 +13,9 @@ import org.springframework.cache.CacheManager;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.server.ResponseStatusException;
 
 @Service
 public class LogService {
