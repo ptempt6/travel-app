@@ -1,7 +1,6 @@
 package com.example.travelapp.service;
 
 
-import com.example.travelapp.exception.InternalServerErrorException;
 import com.example.travelapp.exception.NotFoundException;
 import com.example.travelapp.model.LogObj;
 import java.io.IOException;
@@ -43,13 +42,9 @@ public class LogService {
     public LogObj getStatus(Long taskId) {
         Cache logsCache = cacheManager.getCache("logTasks");
         if (logsCache != null) {
-            LogObj task = (LogObj) logsCache.get(taskId);
-            if (task != null) {
-                return task;
-            }
-            throw new NotFoundException("Task not found");
+            return logsCache.get(taskId, LogObj.class);
         } else {
-            throw new InternalServerErrorException("error");
+            return null;
         }
     }
 
