@@ -1,0 +1,14 @@
+/* Table styles */
+.ant-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+  }
+  
+  .ant-table {
+    min-width: 100%;
+  }
+  
+  .ant-table-container {
+    display: block;
+    width: 100%;
+  }

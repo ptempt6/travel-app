@@ -1,0 +1,446 @@
+13-04-2025 19:52:22 [INFO] - Starting TravelAppApplication using Java 23.0.2 with PID 34440 (C:\Users\aleks\IdeaProjects\travel-app\target\classes started by aleks in C:\Users\aleks\IdeaProjects\travel-app)
+13-04-2025 19:52:22 [DEBUG] - Running with Spring Boot v3.4.3, Spring v6.2.3
+13-04-2025 19:52:22 [INFO] - No active profile set, falling back to 1 default profile: "default"
+13-04-2025 19:52:25 [INFO] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+13-04-2025 19:52:25 [INFO] - Finished Spring Data repository scanning in 138 ms. Found 3 JPA repository interfaces.
+13-04-2025 19:52:27 [INFO] - Tomcat initialized with port 8081 (http)
+13-04-2025 19:52:27 [INFO] - Starting service [Tomcat]
+13-04-2025 19:52:27 [INFO] - Starting Servlet engine: [Apache Tomcat/10.1.36]
+13-04-2025 19:52:27 [INFO] - Initializing Spring embedded WebApplicationContext
+13-04-2025 19:52:27 [INFO] - Root WebApplicationContext: initialization completed in 4471 ms
+13-04-2025 19:52:27 [INFO] - HHH000204: Processing PersistenceUnitInfo [name: default]
+13-04-2025 19:52:28 [INFO] - HHH000412: Hibernate ORM core version 6.6.8.Final
+13-04-2025 19:52:28 [INFO] - HHH000026: Second-level cache disabled
+13-04-2025 19:52:28 [INFO] - No LoadTimeWeaver setup: ignoring JPA class transformer
+13-04-2025 19:52:29 [INFO] - HikariPool-1 - Starting...
+13-04-2025 19:52:30 [WARN] - SQL Error: 0, SQLState: 08001
+13-04-2025 19:52:30 [ERROR] - Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+13-04-2025 19:52:30 [WARN] - HHH000342: Could not obtain connection to query metadata
+org.hibernate.exception.JDBCConnectionException: unable to obtain isolated JDBC connection [Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.] [n/a]
+	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:100)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:58)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:94)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:116)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:320)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:129)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:81)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215)
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:226)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:194)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:171)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1442)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1513)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1859)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1808)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:601)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:346)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at com.example.travelapp.TravelAppApplication.main(TravelAppApplication.java:17)
+Caused by: org.postgresql.util.PSQLException: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:352)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:273)
+	at org.postgresql.Driver.makeConnection(Driver.java:446)
+	at org.postgresql.Driver.connect(Driver.java:298)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:137)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:360)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:202)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:461)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:550)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:98)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:126)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:467)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:61)
+	... 35 common frames omitted
+Caused by: java.net.ConnectException: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:760)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:260)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:121)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:140)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:268)
+	... 49 common frames omitted
+13-04-2025 19:52:30 [ERROR] - Failed to initialize JPA EntityManagerFactory: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+13-04-2025 19:52:30 [WARN] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+13-04-2025 19:52:30 [INFO] - Stopping service [Tomcat]
+13-04-2025 19:52:30 [INFO] - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+13-04-2025 19:52:30 [ERROR] - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1812)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:601)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:346)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at com.example.travelapp.TravelAppApplication.main(TravelAppApplication.java:17)
+Caused by: org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:276)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215)
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:226)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:194)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:171)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1442)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1513)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1859)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1808)
+	... 15 common frames omitted
+Caused by: org.hibernate.HibernateException: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.determineDialect(DialectFactoryImpl.java:191)
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.buildDialect(DialectFactoryImpl.java:87)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentWithDefaults(JdbcEnvironmentInitiator.java:181)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:392)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:129)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:81)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	... 30 common frames omitted
+13-04-2025 19:54:47 [INFO] - Starting TravelAppApplication using Java 23.0.2 with PID 23392 (C:\Users\aleks\IdeaProjects\travel-app\target\classes started by aleks in C:\Users\aleks\IdeaProjects\travel-app)
+13-04-2025 19:54:47 [DEBUG] - Running with Spring Boot v3.4.3, Spring v6.2.3
+13-04-2025 19:54:47 [INFO] - No active profile set, falling back to 1 default profile: "default"
+13-04-2025 19:54:49 [INFO] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+13-04-2025 19:54:49 [INFO] - Finished Spring Data repository scanning in 188 ms. Found 3 JPA repository interfaces.
+13-04-2025 19:54:51 [INFO] - Tomcat initialized with port 8081 (http)
+13-04-2025 19:54:51 [INFO] - Starting service [Tomcat]
+13-04-2025 19:54:51 [INFO] - Starting Servlet engine: [Apache Tomcat/10.1.36]
+13-04-2025 19:54:51 [INFO] - Initializing Spring embedded WebApplicationContext
+13-04-2025 19:54:51 [INFO] - Root WebApplicationContext: initialization completed in 3894 ms
+13-04-2025 19:54:52 [INFO] - HHH000204: Processing PersistenceUnitInfo [name: default]
+13-04-2025 19:54:52 [INFO] - HHH000412: Hibernate ORM core version 6.6.8.Final
+13-04-2025 19:54:52 [INFO] - HHH000026: Second-level cache disabled
+13-04-2025 19:54:53 [INFO] - No LoadTimeWeaver setup: ignoring JPA class transformer
+13-04-2025 19:54:53 [INFO] - HikariPool-1 - Starting...
+13-04-2025 19:54:53 [INFO] - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7e2c6fd6
+13-04-2025 19:54:53 [INFO] - HikariPool-1 - Start completed.
+13-04-2025 19:54:53 [INFO] - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.4
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+13-04-2025 19:54:56 [INFO] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+13-04-2025 19:54:56 [INFO] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+13-04-2025 19:54:56 [WARN] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'logController' defined in file [C:\Users\aleks\IdeaProjects\travel-app\target\classes\com\example\travelapp\controller\LogController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'logService' defined in file [C:\Users\aleks\IdeaProjects\travel-app\target\classes\com\example\travelapp\service\LogService.class]: Unsatisfied dependency expressed through constructor parameter 1: No qualifying bean of type 'org.springframework.cache.CacheManager' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+13-04-2025 19:54:57 [INFO] - Closing JPA EntityManagerFactory for persistence unit 'default'
+13-04-2025 19:54:57 [INFO] - HikariPool-1 - Shutdown initiated...
+13-04-2025 19:54:57 [INFO] - HikariPool-1 - Shutdown completed.
+13-04-2025 19:54:57 [INFO] - Stopping service [Tomcat]
+13-04-2025 19:54:57 [INFO] - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+13-04-2025 19:54:57 [ERROR] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 1 of constructor in com.example.travelapp.service.LogService required a bean of type 'org.springframework.cache.CacheManager' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'org.springframework.cache.CacheManager' in your configuration.
+
+13-04-2025 20:06:14 [INFO] - Starting TravelAppApplication using Java 23.0.2 with PID 2412 (C:\Users\aleks\IdeaProjects\travel-app\target\classes started by aleks in C:\Users\aleks\IdeaProjects\travel-app)
+13-04-2025 20:06:14 [DEBUG] - Running with Spring Boot v3.4.3, Spring v6.2.3
+13-04-2025 20:06:14 [INFO] - No active profile set, falling back to 1 default profile: "default"
+13-04-2025 20:06:16 [INFO] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+13-04-2025 20:06:16 [INFO] - Finished Spring Data repository scanning in 116 ms. Found 3 JPA repository interfaces.
+13-04-2025 20:06:18 [INFO] - Tomcat initialized with port 8081 (http)
+13-04-2025 20:06:18 [INFO] - Starting service [Tomcat]
+13-04-2025 20:06:18 [INFO] - Starting Servlet engine: [Apache Tomcat/10.1.36]
+13-04-2025 20:06:18 [INFO] - Initializing Spring embedded WebApplicationContext
+13-04-2025 20:06:18 [INFO] - Root WebApplicationContext: initialization completed in 3838 ms
+13-04-2025 20:06:18 [INFO] - HHH000204: Processing PersistenceUnitInfo [name: default]
+13-04-2025 20:06:19 [INFO] - HHH000412: Hibernate ORM core version 6.6.8.Final
+13-04-2025 20:06:19 [INFO] - HHH000026: Second-level cache disabled
+13-04-2025 20:06:20 [INFO] - No LoadTimeWeaver setup: ignoring JPA class transformer
+13-04-2025 20:06:20 [INFO] - HikariPool-1 - Starting...
+13-04-2025 20:06:20 [INFO] - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@36cfe107
+13-04-2025 20:06:20 [INFO] - HikariPool-1 - Start completed.
+13-04-2025 20:06:20 [INFO] - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.4
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+13-04-2025 20:06:23 [INFO] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+13-04-2025 20:06:24 [INFO] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+13-04-2025 20:06:24 [INFO] - CALL: CacheConfig.cacheManager()
+13-04-2025 20:06:24 [INFO] - EXECUTED: CacheConfig.cacheManager() RETURNED: org.springframework.cache.caffeine.CaffeineCacheManager@2f8b48c3
+13-04-2025 20:06:25 [INFO] - Hibernate is in classpath; If applicable, HQL parser will be used.
+13-04-2025 20:06:27 [INFO] - CALL: AsyncConfig.taskExecutor()
+13-04-2025 20:06:27 [INFO] - EXECUTED: AsyncConfig.taskExecutor() RETURNED: org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor@43ac1fa0
+13-04-2025 20:06:28 [WARN] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+13-04-2025 20:06:29 [INFO] - Tomcat started on port 8081 (http) with context path '/'
+13-04-2025 20:06:29 [INFO] - Started TravelAppApplication in 16.43 seconds (process running for 17.908)
+13-04-2025 20:08:34 [INFO] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+13-04-2025 20:08:34 [INFO] - Initializing Servlet 'dispatcherServlet'
+13-04-2025 20:08:34 [INFO] - Completed initialization in 3 ms
+13-04-2025 20:08:34 [INFO] - CALL: CounterController.regVisit()
+13-04-2025 20:08:34 [INFO] - CALL: CounterService.increment()
+13-04-2025 20:08:34 [INFO] - EXECUTED: CounterService.increment() RETURNED: null
+13-04-2025 20:08:34 [INFO] - EXECUTED: CounterController.regVisit() RETURNED: null
+13-04-2025 20:08:40 [INFO] - CALL: CounterController.regVisit()
+13-04-2025 20:08:40 [INFO] - CALL: CounterService.increment()
+13-04-2025 20:08:40 [INFO] - EXECUTED: CounterService.increment() RETURNED: null
+13-04-2025 20:08:40 [INFO] - EXECUTED: CounterController.regVisit() RETURNED: null
+13-04-2025 20:08:48 [INFO] - CALL: CounterController.regVisit()
+13-04-2025 20:08:48 [INFO] - CALL: CounterService.increment()
+13-04-2025 20:08:48 [INFO] - EXECUTED: CounterService.increment() RETURNED: null
+13-04-2025 20:08:48 [INFO] - EXECUTED: CounterController.regVisit() RETURNED: null
+13-04-2025 20:08:53 [INFO] - CALL: CounterController.getStats()
+13-04-2025 20:08:53 [INFO] - CALL: CounterService.getTotalVisits()
+13-04-2025 20:08:53 [INFO] - EXECUTED: CounterService.getTotalVisits() RETURNED: 3
+13-04-2025 20:08:53 [INFO] - EXECUTED: CounterController.getStats() RETURNED: <200 OK OK,{totalVisits=3},[]>
+13-04-2025 20:08:59 [INFO] - CALL: CounterController.regVisit()
+13-04-2025 20:08:59 [INFO] - CALL: CounterService.increment()
+13-04-2025 20:08:59 [INFO] - EXECUTED: CounterService.increment() RETURNED: null
+13-04-2025 20:08:59 [INFO] - EXECUTED: CounterController.regVisit() RETURNED: null
+13-04-2025 20:10:15 [WARN] - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+13-04-2025 20:10:28 [INFO] - CALL: LogController.createLogs(..)
+13-04-2025 20:10:28 [INFO] - CALL: LogService.startLogCreation(..)
+13-04-2025 20:10:28 [INFO] - EXECUTED: LogService.startLogCreation(..) RETURNED: 1
+13-04-2025 20:10:28 [INFO] - EXECUTED: LogController.createLogs(..) RETURNED: <202 ACCEPTED Accepted,1,[]>
+13-04-2025 20:10:28 [INFO] - CALL: AsyncLogService.createLogs(..)
+13-04-2025 20:10:33 [INFO] - EXECUTED: AsyncLogService.createLogs(..) RETURNED: null
+13-04-2025 20:10:39 [WARN] - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' is not supported]
+13-04-2025 20:11:03 [INFO] - CALL: LogController.checkStatus(..)
+13-04-2025 20:11:03 [INFO] - CALL: LogService.getStatus(..)
+13-04-2025 20:11:03 [INFO] - EXECUTED: LogService.getStatus(..) RETURNED: com.example.travelapp.model.LogObj@2b5e4b00
+13-04-2025 20:11:03 [INFO] - EXECUTED: LogController.checkStatus(..) RETURNED: <200 OK OK,{error=app.log, status=FAILED},[]>
+13-04-2025 20:15:42 [WARN] - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+13-04-2025 20:15:48 [INFO] - CALL: LogController.createLogs(..)
+13-04-2025 20:15:48 [INFO] - CALL: LogService.startLogCreation(..)
+13-04-2025 20:15:48 [INFO] - EXECUTED: LogService.startLogCreation(..) RETURNED: 2
+13-04-2025 20:15:48 [INFO] - EXECUTED: LogController.createLogs(..) RETURNED: <202 ACCEPTED Accepted,2,[]>
+13-04-2025 20:15:48 [INFO] - CALL: AsyncLogService.createLogs(..)
+13-04-2025 20:15:53 [ERROR] - OCCURRED: AsyncLogService.createLogs(..) REASON: Text '04-13-2025' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 13
+13-04-2025 20:15:53 [ERROR] - Unexpected exception occurred invoking async method: public void com.example.travelapp.service.AsyncLogService.createLogs(java.lang.Long,java.lang.String,org.springframework.cache.Cache)
+java.time.format.DateTimeParseException: Text '04-13-2025' could not be parsed: Invalid value for MonthOfYear (valid values 1 - 12): 13
+	at java.base/java.time.format.DateTimeFormatter.createError(DateTimeFormatter.java:2079)
+	at java.base/java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:2014)
+	at java.base/java.time.LocalDate.parse(LocalDate.java:435)
+	at com.example.travelapp.service.AsyncLogService.createLogs(AsyncLogService.java:32)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.aspectj.AspectJAfterThrowingAdvice.invoke(AspectJAfterThrowingAdvice.java:64)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:57)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:58)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.interceptor.AsyncExecutionInterceptor.lambda$invoke$0(AsyncExecutionInterceptor.java:114)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+Caused by: java.time.DateTimeException: Invalid value for MonthOfYear (valid values 1 - 12): 13
+	at java.base/java.time.temporal.ValueRange.checkValidIntValue(ValueRange.java:338)
+	at java.base/java.time.temporal.ChronoField.checkValidIntValue(ChronoField.java:740)
+	at java.base/java.time.chrono.IsoChronology.resolveYMD(IsoChronology.java:645)
+	at java.base/java.time.chrono.IsoChronology.resolveYMD(IsoChronology.java:127)
+	at java.base/java.time.chrono.AbstractChronology.resolveDate(AbstractChronology.java:437)
+	at java.base/java.time.chrono.IsoChronology.resolveDate(IsoChronology.java:587)
+	at java.base/java.time.chrono.IsoChronology.resolveDate(IsoChronology.java:127)
+	at java.base/java.time.format.Parsed.resolveDateFields(Parsed.java:372)
+	at java.base/java.time.format.Parsed.resolveFields(Parsed.java:278)
+	at java.base/java.time.format.Parsed.resolve(Parsed.java:265)
+	at java.base/java.time.format.DateTimeParseContext.toResolved(DateTimeParseContext.java:331)
+	at java.base/java.time.format.DateTimeFormatter.parseResolved0(DateTimeFormatter.java:2114)
+	at java.base/java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:2010)
+	... 20 common frames omitted
+13-04-2025 20:16:02 [WARN] - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' is not supported]
+13-04-2025 20:16:07 [INFO] - CALL: LogController.checkStatus(..)
+13-04-2025 20:16:07 [INFO] - CALL: LogService.getStatus(..)
+13-04-2025 20:16:07 [INFO] - EXECUTED: LogService.getStatus(..) RETURNED: com.example.travelapp.model.LogObj@5257c475
+13-04-2025 20:16:07 [INFO] - EXECUTED: LogController.checkStatus(..) RETURNED: <200 OK OK,{status=IN_PROGRESS},[]>
+13-04-2025 20:16:18 [INFO] - CALL: LogController.checkStatus(..)
+13-04-2025 20:16:18 [INFO] - CALL: LogService.getStatus(..)
+13-04-2025 20:16:18 [INFO] - EXECUTED: LogService.getStatus(..) RETURNED: com.example.travelapp.model.LogObj@5257c475
+13-04-2025 20:16:18 [INFO] - EXECUTED: LogController.checkStatus(..) RETURNED: <200 OK OK,{status=IN_PROGRESS},[]>
+13-04-2025 20:16:21 [INFO] - CALL: LogController.checkStatus(..)
+13-04-2025 20:16:21 [INFO] - CALL: LogService.getStatus(..)
+13-04-2025 20:16:21 [INFO] - EXECUTED: LogService.getStatus(..) RETURNED: com.example.travelapp.model.LogObj@5257c475
+13-04-2025 20:16:21 [INFO] - EXECUTED: LogController.checkStatus(..) RETURNED: <200 OK OK,{status=IN_PROGRESS},[]>
+13-04-2025 20:16:22 [INFO] - CALL: LogController.checkStatus(..)
+13-04-2025 20:16:22 [INFO] - CALL: LogService.getStatus(..)
+13-04-2025 20:16:22 [INFO] - EXECUTED: LogService.getStatus(..) RETURNED: com.example.travelapp.model.LogObj@5257c475
+13-04-2025 20:16:22 [INFO] - EXECUTED: LogController.checkStatus(..) RETURNED: <200 OK OK,{status=IN_PROGRESS},[]>
+13-04-2025 20:16:24 [INFO] - CALL: LogController.checkStatus(..)
+13-04-2025 20:16:24 [INFO] - CALL: LogService.getStatus(..)
+13-04-2025 20:16:24 [INFO] - EXECUTED: LogService.getStatus(..) RETURNED: com.example.travelapp.model.LogObj@5257c475
+13-04-2025 20:16:24 [INFO] - EXECUTED: LogController.checkStatus(..) RETURNED: <200 OK OK,{status=IN_PROGRESS},[]>
+13-04-2025 20:16:25 [INFO] - CALL: LogController.checkStatus(..)
+13-04-2025 20:16:25 [INFO] - CALL: LogService.getStatus(..)
+13-04-2025 20:16:25 [INFO] - EXECUTED: LogService.getStatus(..) RETURNED: com.example.travelapp.model.LogObj@5257c475
+13-04-2025 20:16:25 [INFO] - EXECUTED: LogController.checkStatus(..) RETURNED: <200 OK OK,{status=IN_PROGRESS},[]>
+13-04-2025 20:16:27 [INFO] - CALL: LogController.checkStatus(..)
+13-04-2025 20:16:27 [INFO] - CALL: LogService.getStatus(..)
+13-04-2025 20:16:27 [INFO] - EXECUTED: LogService.getStatus(..) RETURNED: com.example.travelapp.model.LogObj@5257c475
+13-04-2025 20:16:27 [INFO] - EXECUTED: LogController.checkStatus(..) RETURNED: <200 OK OK,{status=IN_PROGRESS},[]>
+13-04-2025 20:16:30 [INFO] - CALL: LogController.checkStatus(..)
+13-04-2025 20:16:30 [INFO] - CALL: LogService.getStatus(..)
+13-04-2025 20:16:30 [INFO] - EXECUTED: LogService.getStatus(..) RETURNED: com.example.travelapp.model.LogObj@2b5e4b00
+13-04-2025 20:16:30 [INFO] - EXECUTED: LogController.checkStatus(..) RETURNED: <200 OK OK,{error=app.log, status=FAILED},[]>
+13-04-2025 20:16:33 [INFO] - CALL: LogController.checkStatus(..)
+13-04-2025 20:16:33 [INFO] - CALL: LogService.getStatus(..)
+13-04-2025 20:16:33 [INFO] - EXECUTED: LogService.getStatus(..) RETURNED: com.example.travelapp.model.LogObj@5257c475
+13-04-2025 20:16:33 [INFO] - EXECUTED: LogController.checkStatus(..) RETURNED: <200 OK OK,{status=IN_PROGRESS},[]>
+13-04-2025 20:16:38 [INFO] - CALL: LogController.checkStatus(..)
+13-04-2025 20:16:38 [INFO] - CALL: LogService.getStatus(..)
+13-04-2025 20:16:38 [INFO] - EXECUTED: LogService.getStatus(..) RETURNED: com.example.travelapp.model.LogObj@5257c475
+13-04-2025 20:16:38 [INFO] - EXECUTED: LogController.checkStatus(..) RETURNED: <200 OK OK,{status=IN_PROGRESS},[]>
+13-04-2025 20:16:39 [INFO] - CALL: LogController.checkStatus(..)
+13-04-2025 20:16:39 [INFO] - CALL: LogService.getStatus(..)
+13-04-2025 20:16:39 [INFO] - EXECUTED: LogService.getStatus(..) RETURNED: com.example.travelapp.model.LogObj@5257c475
+13-04-2025 20:16:39 [INFO] - EXECUTED: LogController.checkStatus(..) RETURNED: <200 OK OK,{status=IN_PROGRESS},[]>
+13-04-2025 20:16:41 [INFO] - CALL: LogController.checkStatus(..)
+13-04-2025 20:16:41 [INFO] - CALL: LogService.getStatus(..)
+13-04-2025 20:16:41 [INFO] - EXECUTED: LogService.getStatus(..) RETURNED: com.example.travelapp.model.LogObj@5257c475
+13-04-2025 20:16:41 [INFO] - EXECUTED: LogController.checkStatus(..) RETURNED: <200 OK OK,{status=IN_PROGRESS},[]>
+13-04-2025 20:16:42 [INFO] - CALL: LogController.checkStatus(..)
+13-04-2025 20:16:42 [INFO] - CALL: LogService.getStatus(..)
+13-04-2025 20:16:42 [INFO] - EXECUTED: LogService.getStatus(..) RETURNED: com.example.travelapp.model.LogObj@5257c475
+13-04-2025 20:16:42 [INFO] - EXECUTED: LogController.checkStatus(..) RETURNED: <200 OK OK,{status=IN_PROGRESS},[]>
+13-04-2025 20:16:43 [INFO] - CALL: LogController.checkStatus(..)
+13-04-2025 20:16:43 [INFO] - CALL: LogService.getStatus(..)
+13-04-2025 20:16:43 [INFO] - EXECUTED: LogService.getStatus(..) RETURNED: com.example.travelapp.model.LogObj@5257c475
+13-04-2025 20:16:43 [INFO] - EXECUTED: LogController.checkStatus(..) RETURNED: <200 OK OK,{status=IN_PROGRESS},[]>
+13-04-2025 20:16:44 [INFO] - CALL: LogController.checkStatus(..)
+13-04-2025 20:16:44 [INFO] - CALL: LogService.getStatus(..)
+13-04-2025 20:16:44 [INFO] - EXECUTED: LogService.getStatus(..) RETURNED: com.example.travelapp.model.LogObj@5257c475
+13-04-2025 20:16:44 [INFO] - EXECUTED: LogController.checkStatus(..) RETURNED: <200 OK OK,{status=IN_PROGRESS},[]>
+13-04-2025 20:16:45 [INFO] - CALL: LogController.checkStatus(..)
+13-04-2025 20:16:45 [INFO] - CALL: LogService.getStatus(..)
+13-04-2025 20:16:45 [INFO] - EXECUTED: LogService.getStatus(..) RETURNED: com.example.travelapp.model.LogObj@5257c475
+13-04-2025 20:16:45 [INFO] - EXECUTED: LogController.checkStatus(..) RETURNED: <200 OK OK,{status=IN_PROGRESS},[]>
+13-04-2025 20:16:45 [INFO] - CALL: LogController.checkStatus(..)
+13-04-2025 20:16:45 [INFO] - CALL: LogService.getStatus(..)
+13-04-2025 20:16:45 [INFO] - EXECUTED: LogService.getStatus(..) RETURNED: com.example.travelapp.model.LogObj@5257c475
+13-04-2025 20:16:45 [INFO] - EXECUTED: LogController.checkStatus(..) RETURNED: <200 OK OK,{status=IN_PROGRESS},[]>
+13-04-2025 20:16:47 [INFO] - CALL: LogController.checkStatus(..)
+13-04-2025 20:16:47 [INFO] - CALL: LogService.getStatus(..)
+13-04-2025 20:16:47 [INFO] - EXECUTED: LogService.getStatus(..) RETURNED: com.example.travelapp.model.LogObj@5257c475
+13-04-2025 20:16:47 [INFO] - EXECUTED: LogController.checkStatus(..) RETURNED: <200 OK OK,{status=IN_PROGRESS},[]>
+13-04-2025 20:18:26 [INFO] - CALL: LogController.createLogs(..)
+13-04-2025 20:18:26 [INFO] - CALL: LogService.startLogCreation(..)
+13-04-2025 20:18:26 [INFO] - CALL: AsyncLogService.createLogs(..)
+13-04-2025 20:18:26 [INFO] - EXECUTED: LogService.startLogCreation(..) RETURNED: 3
+13-04-2025 20:18:26 [INFO] - EXECUTED: LogController.createLogs(..) RETURNED: <202 ACCEPTED Accepted,3,[]>
+13-04-2025 20:18:31 [INFO] - EXECUTED: AsyncLogService.createLogs(..) RETURNED: null
+13-04-2025 20:18:32 [INFO] - CALL: GlobalExceptionHandler.handleArgumentTypeMismatch(..)
+13-04-2025 20:18:32 [INFO] - EXECUTED: GlobalExceptionHandler.handleArgumentTypeMismatch(..) RETURNED: <400 BAD_REQUEST Bad Request,com.example.travelapp.model.dto.response.ErrorResponseDto@f16a5f8,[]>
+13-04-2025 20:18:34 [INFO] - CALL: LogController.checkStatus(..)
+13-04-2025 20:18:34 [INFO] - CALL: LogService.getStatus(..)
+13-04-2025 20:18:34 [INFO] - EXECUTED: LogService.getStatus(..) RETURNED: com.example.travelapp.model.LogObj@24ba006c
+13-04-2025 20:18:34 [INFO] - EXECUTED: LogController.checkStatus(..) RETURNED: <200 OK OK,{error=app.log, status=FAILED},[]>
+13-04-2025 20:23:20 [INFO] - CALL: LogController.createLogs(..)
+13-04-2025 20:23:20 [INFO] - CALL: LogService.startLogCreation(..)
+13-04-2025 20:23:20 [INFO] - EXECUTED: LogService.startLogCreation(..) RETURNED: 4
+13-04-2025 20:23:20 [INFO] - EXECUTED: LogController.createLogs(..) RETURNED: <202 ACCEPTED Accepted,4,[]>
+13-04-2025 20:23:20 [INFO] - CALL: AsyncLogService.createLogs(..)
+13-04-2025 20:23:25 [INFO] - EXECUTED: AsyncLogService.createLogs(..) RETURNED: null
+13-04-2025 20:26:14 [INFO] - CALL: LogController.createLogs(..)
+13-04-2025 20:26:14 [INFO] - CALL: LogService.startLogCreation(..)
+13-04-2025 20:26:14 [INFO] - EXECUTED: LogService.startLogCreation(..) RETURNED: 5
+13-04-2025 20:26:14 [INFO] - CALL: AsyncLogService.createLogs(..)
+13-04-2025 20:26:14 [INFO] - EXECUTED: LogController.createLogs(..) RETURNED: <202 ACCEPTED Accepted,5,[]>
+13-04-2025 20:26:17 [INFO] - CALL: LogController.createLogs(..)
+13-04-2025 20:26:17 [INFO] - CALL: LogService.startLogCreation(..)
+13-04-2025 20:26:17 [INFO] - EXECUTED: LogService.startLogCreation(..) RETURNED: 6
+13-04-2025 20:26:17 [INFO] - CALL: AsyncLogService.createLogs(..)
+13-04-2025 20:26:17 [INFO] - EXECUTED: LogController.createLogs(..) RETURNED: <202 ACCEPTED Accepted,6,[]>
+13-04-2025 20:26:19 [INFO] - EXECUTED: AsyncLogService.createLogs(..) RETURNED: null
+13-04-2025 20:26:22 [INFO] - EXECUTED: AsyncLogService.createLogs(..) RETURNED: null
+13-04-2025 20:26:23 [INFO] - CALL: LogController.createLogs(..)
+13-04-2025 20:26:23 [INFO] - CALL: LogService.startLogCreation(..)
+13-04-2025 20:26:23 [INFO] - EXECUTED: LogService.startLogCreation(..) RETURNED: 7
+13-04-2025 20:26:23 [INFO] - CALL: AsyncLogService.createLogs(..)
+13-04-2025 20:26:23 [INFO] - EXECUTED: LogController.createLogs(..) RETURNED: <202 ACCEPTED Accepted,7,[]>
+13-04-2025 20:26:28 [INFO] - EXECUTED: AsyncLogService.createLogs(..) RETURNED: null
+13-04-2025 20:26:29 [INFO] - CALL: LogController.checkStatus(..)
+13-04-2025 20:26:29 [INFO] - CALL: LogService.getStatus(..)
+13-04-2025 20:26:29 [INFO] - EXECUTED: LogService.getStatus(..) RETURNED: com.example.travelapp.model.LogObj@7e5a0e55
+13-04-2025 20:26:29 [INFO] - EXECUTED: LogController.checkStatus(..) RETURNED: <200 OK OK,{error=app.log, status=FAILED},[]>
+13-04-2025 20:26:30 [INFO] - CALL: LogController.checkStatus(..)
+13-04-2025 20:26:30 [INFO] - CALL: LogService.getStatus(..)
+13-04-2025 20:26:30 [INFO] - EXECUTED: LogService.getStatus(..) RETURNED: com.example.travelapp.model.LogObj@21569607
+13-04-2025 20:26:30 [INFO] - EXECUTED: LogController.checkStatus(..) RETURNED: <200 OK OK,{error=app.log, status=FAILED},[]>
+13-04-2025 20:28:53 [INFO] - CALL: LogController.createLogs(..)
+13-04-2025 20:28:53 [INFO] - CALL: LogService.startLogCreation(..)
+13-04-2025 20:28:53 [INFO] - EXECUTED: LogService.startLogCreation(..) RETURNED: 8
+13-04-2025 20:28:53 [INFO] - EXECUTED: LogController.createLogs(..) RETURNED: <202 ACCEPTED Accepted,8,[]>
+13-04-2025 20:28:53 [INFO] - CALL: AsyncLogService.createLogs(..)
+13-04-2025 20:28:58 [INFO] - CALL: LogController.checkStatus(..)
+13-04-2025 20:28:58 [INFO] - CALL: LogService.getStatus(..)
+13-04-2025 20:28:58 [INFO] - EXECUTED: LogService.getStatus(..) RETURNED: com.example.travelapp.model.LogObj@5be1a572
+13-04-2025 20:28:58 [INFO] - EXECUTED: LogController.checkStatus(..) RETURNED: <200 OK OK,{status=IN_PROGRESS},[]>
+13-04-2025 20:28:58 [INFO] - EXECUTED: AsyncLogService.createLogs(..) RETURNED: null
+13-04-2025 20:29:00 [INFO] - CALL: LogController.checkStatus(..)
+13-04-2025 20:29:00 [INFO] - CALL: LogService.getStatus(..)
+13-04-2025 20:29:00 [INFO] - EXECUTED: LogService.getStatus(..) RETURNED: com.example.travelapp.model.LogObj@74a18ac1
+13-04-2025 20:29:00 [INFO] - EXECUTED: LogController.checkStatus(..) RETURNED: <200 OK OK,{error=app.log, status=FAILED},[]>
+13-04-2025 20:29:06 [INFO] - CALL: LogController.checkStatus(..)
+13-04-2025 20:29:06 [INFO] - CALL: LogService.getStatus(..)
+13-04-2025 20:29:06 [INFO] - EXECUTED: LogService.getStatus(..) RETURNED: com.example.travelapp.model.LogObj@74a18ac1
+13-04-2025 20:29:06 [INFO] - EXECUTED: LogController.checkStatus(..) RETURNED: <200 OK OK,{error=app.log, status=FAILED},[]>
+13-04-2025 20:29:21 [INFO] - Commencing graceful shutdown. Waiting for active requests to complete
+13-04-2025 20:29:21 [INFO] - Graceful shutdown complete
+13-04-2025 20:29:21 [INFO] - Closing JPA EntityManagerFactory for persistence unit 'default'
+13-04-2025 20:29:21 [INFO] - HikariPool-1 - Shutdown initiated...
+13-04-2025 20:29:21 [INFO] - HikariPool-1 - Shutdown completed.

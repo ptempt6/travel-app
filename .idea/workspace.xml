@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f2084c91-dba9-4acb-85c9-79a75c7790b0" name="Changes" comment="614">
+      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/api/routeApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/api/routeApi.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/api/userApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/api/userApi.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/EntityModal/PlaceModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/EntityModal/PlaceModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/EntityModal/RouteModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/EntityModal/RouteModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/EntityModal/UserModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/EntityModal/UserModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/MainLayout/MainLayout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/MainLayout/MainLayout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/TableView/PlacesTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/TableView/PlacesTable.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/TableView/RouteForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/TableView/RouteForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/TableView/RoutesTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/TableView/RoutesTable.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/TableView/UsersTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/TableView/UsersTable.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/User/UserForm.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/User/UserList.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/HomePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/HomePage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/PlacePage.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/vite.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/travelapp/TravelAppApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/travelapp/cache/LfuCache.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/travelapp/cache/UserCache.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/travelapp/config/AsyncConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/travelapp/config/CacheConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/travelapp/controller/CounterController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/travelapp/controller/LogController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/travelapp/controller/PlaceController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/travelapp/controller/RouteController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/travelapp/controller/UserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/travelapp/exception/ApiException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/travelapp/exception/BadRequestException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/travelapp/exception/ErrorMessages.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/travelapp/exception/GlobalExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/travelapp/exception/InternalServerErrorException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/travelapp/exception/NotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/travelapp/log/LogAspect.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/travelapp/model/LogObj.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/travelapp/model/Place.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/travelapp/model/Route.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/travelapp/model/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/travelapp/model/dto/request/PlaceRequestDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/travelapp/model/dto/request/RouteRequestDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/travelapp/model/dto/request/UserRequestDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/travelapp/model/dto/response/ErrorResponseDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/travelapp/model/dto/response/PlaceResponseDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/travelapp/model/dto/response/RouteResponseDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/travelapp/model/dto/response/UserResponseDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/travelapp/repository/PlaceRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/travelapp/repository/RouteRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/travelapp/repository/UserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/travelapp/service/AsyncLogService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/travelapp/service/CounterService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/travelapp/service/LogService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/travelapp/service/PlaceService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/travelapp/service/RouteService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/travelapp/service/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/travelapp/service/mapper/PlaceMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/travelapp/service/mapper/RouteMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/travelapp/service/mapper/UserMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/travelapp/TravelAppApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/travelapp/service/PlaceServiceUnitTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/travelapp/service/RouteServiceUnitTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/travelapp/service/UserServiceUnitTest.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;ptempt6&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/ptempt6/travel-app.git&quot;,
+    &quot;accountId&quot;: &quot;1a38cf8f-b25b-436f-ba88-8c7eda671092&quot;
+  }
+}</component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2u2xYXYhL1JY89KC7RJ4s3mgOKz" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Maven.travel-app [clean].executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;false&quot;,
+    &quot;Spring Boot.TravelAppApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/aleks/IdeaProjects/anyta/death-parade&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.infernus.idea.checkstyle.CheckStyleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
+    ]
+  }
+}</component>
+  <component name="RunManager">
+    <configuration name="TravelAppApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="travel-app" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.travelapp.TravelAppApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.travelapp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.TravelAppApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-125ca727e0f0-intellij.indexing.shared.core-IU-243.24978.46" />
+        <option value="bundled-js-predefined-d6986cc7102b-76f8388c3a79-JavaScript-IU-243.24978.46" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="StructureViewState">
+    <option name="selectedTab" value="Logical" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f2084c91-dba9-4acb-85c9-79a75c7790b0" name="Changes" comment="" />
+      <created>1741460521628</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1741460521628</updated>
+      <workItem from="1741460523120" duration="786000" />
+      <workItem from="1741461935686" duration="35566000" />
+      <workItem from="1741564733047" duration="1216000" />
+      <workItem from="1741566051321" duration="4864000" />
+      <workItem from="1741583509484" duration="1505000" />
+      <workItem from="1741701095808" duration="369000" />
+      <workItem from="1741953564318" duration="184000" />
+      <workItem from="1742386660636" duration="39841000" />
+      <workItem from="1742783564518" duration="13607000" />
+      <workItem from="1743450355771" duration="2029000" />
+      <workItem from="1743752868113" duration="1382000" />
+      <workItem from="1743788482809" duration="22683000" />
+      <workItem from="1744007336733" duration="2228000" />
+      <workItem from="1744561902270" duration="13079000" />
+      <workItem from="1745780159918" duration="3354000" />
+      <workItem from="1745825218307" duration="38000" />
+      <workItem from="1746307407316" duration="367000" />
+      <workItem from="1746390627526" duration="1091000" />
+      <workItem from="1746424380970" duration="1155000" />
+      <workItem from="1746862407619" duration="3281000" />
+    </task>
+    <task id="LOCAL-00001" summary="stuff">
+      <option name="closed" value="true" />
+      <created>1741546692145</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1741546692146</updated>
+    </task>
+    <task id="LOCAL-00002" summary="stuff2">
+      <option name="closed" value="true" />
+      <created>1741563636952</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1741563636953</updated>
+    </task>
+    <task id="LOCAL-00003" summary="stuff3">
+      <option name="closed" value="true" />
+      <created>1741563845854</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1741563845854</updated>
+    </task>
+    <task id="LOCAL-00004" summary="security">
+      <option name="closed" value="true" />
+      <created>1741565558038</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1741565558038</updated>
+    </task>
+    <task id="LOCAL-00005" summary="nodrop">
+      <option name="closed" value="true" />
+      <created>1741566752235</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1741566752235</updated>
+    </task>
+    <task id="LOCAL-00006" summary="frequently used literals moved">
+      <option name="closed" value="true" />
+      <created>1741567733015</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1741567733015</updated>
+    </task>
+    <task id="LOCAL-00007" summary="sonar fix">
+      <option name="closed" value="true" />
+      <created>1741568505337</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1741568505337</updated>
+    </task>
+    <task id="LOCAL-00008" summary="added routes by place">
+      <option name="closed" value="true" />
+      <created>1741575317531</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1741575317531</updated>
+    </task>
+    <task id="LOCAL-00009" summary="shit readme">
+      <option name="closed" value="true" />
+      <created>1741575632400</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1741575632400</updated>
+    </task>
+    <task id="LOCAL-00010" summary="shit readme">
+      <option name="closed" value="true" />
+      <created>1742455266484</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1742455266484</updated>
+    </task>
+    <task id="LOCAL-00011" summary="checkstyle">
+      <option name="closed" value="true" />
+      <created>1742655457467</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1742655457467</updated>
+    </task>
+    <task id="LOCAL-00012" summary="lab4">
+      <option name="closed" value="true" />
+      <created>1742792627164</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1742792627165</updated>
+    </task>
+    <task id="LOCAL-00013" summary="lab4">
+      <option name="closed" value="true" />
+      <created>1742793062854</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1742793062854</updated>
+    </task>
+    <task id="LOCAL-00014" summary="test and bulk&#10;test and bulk">
+      <option name="closed" value="true" />
+      <created>1743943250784</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1743943250784</updated>
+    </task>
+    <task id="LOCAL-00015" summary="fix minor&#10;test and bulk">
+      <option name="closed" value="true" />
+      <created>1743943487542</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1743943487542</updated>
+    </task>
+    <task id="LOCAL-00016" summary="beautify lambda">
+      <option name="closed" value="true" />
+      <created>1744007593523</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1744007593523</updated>
+    </task>
+    <task id="LOCAL-00017" summary="6">
+      <option name="closed" value="true" />
+      <created>1744570325000</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1744570325000</updated>
+    </task>
+    <task id="LOCAL-00018" summary="610">
+      <option name="closed" value="true" />
+      <created>1744616166339</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1744616166339</updated>
+    </task>
+    <task id="LOCAL-00019" summary="612">
+      <option name="closed" value="true" />
+      <created>1744616302853</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1744616302853</updated>
+    </task>
+    <task id="LOCAL-00020" summary="613">
+      <option name="closed" value="true" />
+      <created>1744616711313</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1744616711313</updated>
+    </task>
+    <task id="LOCAL-00021" summary="614">
+      <option name="closed" value="true" />
+      <created>1744620701718</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1744620701718</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="stuff" />
+    <MESSAGE value="stuff2" />
+    <MESSAGE value="stuff3" />
+    <MESSAGE value="security" />
+    <MESSAGE value="nodrop" />
+    <MESSAGE value="frequently used literals moved" />
+    <MESSAGE value="sonar fix" />
+    <MESSAGE value="added routes by place" />
+    <MESSAGE value="shit readme" />
+    <MESSAGE value="checkstyle" />
+    <MESSAGE value="lab4" />
+    <MESSAGE value="test and bulk&#10;test and bulk" />
+    <MESSAGE value="fix minor&#10;test and bulk" />
+    <MESSAGE value="beautify lambda" />
+    <MESSAGE value="6" />
+    <MESSAGE value="610" />
+    <MESSAGE value="612" />
+    <MESSAGE value="613" />
+    <MESSAGE value="614" />
+    <option name="LAST_COMMIT_MESSAGE" value="614" />
+  </component>
+</project>
