@@ -11,7 +11,7 @@ services:
     volumes:
       - db_data:/var/lib/postgresql/data
     networks:
-      - wm-network
+      - travel-app-network
 
   backend:
     build:
@@ -27,11 +27,11 @@ services:
       SPRING_DATASOURCE_USERNAME: ${SPRING_DATASOURCE_USERNAME}
       SPRING_DATASOURCE_PASSWORD: ${SPRING_DATASOURCE_PASSWORD}
     networks:
-      - wm-network
+      - travel-app-network
 
 volumes:
   db_data:
 
 networks:
-  wm-network:
+  travel-app-network:
     driver: bridge
